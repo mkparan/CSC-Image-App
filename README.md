@@ -43,7 +43,7 @@ csc-image-app/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/csc-image-app.git
+git clone https://github.com/mkparan/CSC-Image-App.git
 cd csc-image-app
 ```
 
@@ -137,9 +137,9 @@ Configure targets (Windows, macOS, Linux) in `package.json` under `"build"`.
 
 ## 👥 Contributors
 
-- **Paran** – System Analyst / Frontend  
-- **Pepito** – Frontend  
-- **Rocales** – Backend  
+- **Paran**  
+- **Pepito** 
+- **Rocales**  
 
 ---
 
