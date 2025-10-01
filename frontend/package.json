@@ -1,0 +1,17 @@
+{
+    "name": "csc-image-electron",
+    "version": "0.1.0",
+    "description": "CSC Advanced Image Processing Desktop App (Electron + FastAPI)",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "dev": "electron .",
+        "package": "electron-builder"
+    },
+    "author": "Your Name",
+    "license": "MIT",
+    "devDependencies": {
+        "electron": "^38.2.0",
+        "electron-builder": "^24.6.0"
+    }
+}
