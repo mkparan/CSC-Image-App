@@ -43,11 +43,7 @@ csc-image-app/
 
 ### 1. Clone the Repository
 ```bash
-<<<<<<< HEAD
-git clone https://github.com/your-username/csc-image-app.git
-=======
 git clone https://github.com/mkparan/CSC-Image-App.git
->>>>>>> f00f45f52df71582897b4113f45d8ab837769b76
 cd csc-image-app
 ```
 
@@ -62,9 +58,13 @@ cd csc-image-app
 
 2. Create and activate a Python virtual environment:
    ```bash
+   # Windows (VS Code bash/git-bash)
+   python -m venv venv
+   source venv/Scripts/activate
+
    # Windows (PowerShell)
    py -3.11 -m venv venv
-   venv\Scripts\activate
+   .\venv\Scripts\activate
 
    # macOS/Linux
    python3.11 -m venv venv
@@ -79,6 +79,7 @@ cd csc-image-app
 
 4. Run the backend server:
    ```bash
+   # From backend folder
    uvicorn main:app --reload
    ```
    - Server runs at: [http://127.0.0.1:8000](http://127.0.0.1:8000)  
@@ -141,15 +142,9 @@ Configure targets (Windows, macOS, Linux) in `package.json` under `"build"`.
 
 ## 👥 Contributors
 
-<<<<<<< HEAD
 - **Paran** – System Analyst / Frontend  
 - **Pepito** – Frontend  
 - **Rocales** – Backend  
-=======
-- **Paran**  
-- **Pepito** 
-- **Rocales**  
->>>>>>> f00f45f52df71582897b4113f45d8ab837769b76
 
 ---
 
