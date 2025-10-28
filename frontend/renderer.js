@@ -9,6 +9,7 @@ const operationSelect = document.getElementById("operationSelect");
 const parameters = document.getElementById("parameters");
 const processBtn = document.getElementById("processBtn");
 const downloadBtn = document.getElementById("downloadBtn"); // Download button
+const themeToggle = document.getElementById("themeToggle");
 
 let currentFile = null;
 let multipleFiles = null;
@@ -181,7 +182,23 @@ if (downloadBtn) {
     });
 }
 
-// Load operations on DOMContentLoaded
+// Add theme toggle functionality
+function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    themeToggle.innerHTML = theme === 'dark' ? '☀️ Toggle Theme' : '🌙 Toggle Theme';
+}
+
+// Initialize theme
 window.addEventListener("DOMContentLoaded", async() => {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(savedTheme);
     await loadOperations();
+});
+
+// Theme toggle handler
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
 });

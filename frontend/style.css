@@ -1,10 +1,47 @@
 :root {
+    /* Light theme variables */
     --primary: #2563eb;
     --primary-hover: #1d4ed8;
     --background: #f8fafc;
     --surface: #ffffff;
     --text: #1e293b;
     --border: #e2e8f0;
+}
+
+
+/* Dark theme variables */
+
+[data-theme="dark"] {
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --background: #0f172a;
+    --surface: #1e293b;
+    --text: #e2e8f0;
+    --border: #334155;
+}
+
+
+/* Add theme toggle button styles */
+
+.theme-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+    background: var(--primary);
+    color: white;
 }
 
 body {
@@ -76,6 +113,8 @@ input {
     border: 1px solid var(--border);
     border-radius: 0.375rem;
     background: var(--surface);
+    color: var(--text);
+    /* Add this line to handle text color */
 }
 
 
@@ -241,5 +280,26 @@ input {
     min-width: 40px;
     text-align: right;
     font-size: 0.875rem;
+    color: var(--text);
+}
+
+
+/* Update select and input styles */
+
+select,
+input {
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    background: var(--surface);
+    color: var(--text);
+    /* Add this line to handle text color */
+}
+
+
+/* Add specific styles for select options */
+
+select option {
+    background: var(--surface);
     color: var(--text);
 }
