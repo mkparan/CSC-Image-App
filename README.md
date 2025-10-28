@@ -44,7 +44,7 @@ csc-image-app/
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/mkparan/CSC-Image-App.git
-cd csc-image-app
+cd CSC-Image-App
 ```
 
 ---
