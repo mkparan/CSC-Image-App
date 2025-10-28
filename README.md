@@ -3,10 +3,11 @@
 A cross-platform desktop application for advanced image processing, built with **FastAPI (Python)** as the backend and **Electron (JavaScript/HTML/CSS)** as the frontend.  
 
 Users can:  
-- Upload single or multiple images  
-- Apply operations (grayscale, blur, sharpen, thresholding, morphology, edge detection, etc.)  
+- Upload images via drag & drop or file chooser  
+- Apply operations (blur, sharpen, thresholding, morphology, etc.)  
 - Preview **Original** and **Processed** images side-by-side  
-- Download results individually or as a ZIP (for batch)  
+- Download processed results  
+- Switch between light/dark themes
 
 ---
 
@@ -21,7 +22,7 @@ csc-image-app/
 │   └── start_server.py
 ├── frontend/      # Electron desktop app
 │   ├── index.html
-│   ├── styles.css
+│   ├── style.css
 │   ├── main.js
 │   ├── preload.js
 │   ├── renderer.js
@@ -44,10 +45,8 @@ csc-image-app/
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/mkparan/CSC-Image-App.git
-cd CSC-Image-App
+cd csc-image-app
 ```
-
----
 
 ### 2. Backend Setup (FastAPI)
 
@@ -85,8 +84,6 @@ cd CSC-Image-App
    - Server runs at: [http://127.0.0.1:8000](http://127.0.0.1:8000)  
    - API docs available at: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
----
-
 ### 3. Frontend Setup (Electron)
 
 1. Open a new terminal and navigate to frontend:
@@ -108,22 +105,30 @@ cd CSC-Image-App
 
 ## 🖥️ Usage
 
-- **Upload an image** (drag & drop or file chooser)  
-- Select an **operation** from the dropdown  
-- Adjust parameters (if available)  
-- Click **Process Image** → preview updates  
-- For multiple images, select several files and click **Batch (multi-file)** → ZIP download  
-- **Original** and **Processed** previews are shown side by side, scaled to fit your screen  
+1. **Upload an Image**
+   - Drag & drop into the upload area
+   - Or click to choose file
+
+2. **Process the Image**
+   - Select an operation from the dropdown
+   - Adjust parameters if available
+   - Click "Process Image"
+   - View original and processed previews side by side
+
+3. **Theme Options**
+   - Click the theme toggle button (top-right)
+   - Switch between light and dark modes
+   - Theme preference is saved automatically
 
 ---
 
 ## 🛠️ Development Notes
 
-- CSP is configured to allow `blob:` URLs for previews  
-- Previews are auto-scaled (`max-height: 70vh`) to fit most screens  
-- To package the app into a distributable installer:  
-  - Use [PyInstaller](https://pyinstaller.org/) to bundle the backend into an executable  
-  - Configure `electron-builder` in `frontend/package.json` to include the backend  
+- CSP configured for `blob:` URLs and local development
+- Responsive previews with auto-scaling
+- Theme support using CSS variables
+- Error handling for failed operations
+- Real-time parameter adjustments
 
 ---
 
@@ -150,4 +155,4 @@ Configure targets (Windows, macOS, Linux) in `package.json` under `"build"`.
 
 ## 📝 License
 
-MIT License – free to use, modify, and distribute.  
+MIT License – free to use, modify, and distribute.
