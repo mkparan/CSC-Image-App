@@ -1,0 +1,21 @@
+# Python
+venv/
+__pycache__/
+*.py[cod]
+*.so
+*.pyd
+
+# Node
+node_modules/
+dist/
+build/
+*.exe
+
+# IDE
+.vscode/
+*.code-workspace
+
+# Misc
+.env
+.cache/
+*.log

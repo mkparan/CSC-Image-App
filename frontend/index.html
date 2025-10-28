@@ -1,0 +1,71 @@
+<!-- activity/CSC-Activity/index.html -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' data: blob: http://127.0.0.1:8000 http://localhost:8000;">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CSC Image Processing</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>CSC Image Processing</h1>
+        </header>
+
+        <div class="toolbar">
+            <div id="drop-area" class="drop-area">
+                <p>Drag & drop an image here or <label for="file" class="browse">browse</label></p>
+                <input id="file" type="file" accept="image/*" multiple />
+            </div>
+
+            <div class="controls">
+                <select id="operationSelect">
+                    <option value="">Select Operation</option>
+                    <option value="grayscale">Grayscale</option>
+                    <option value="blur">Blur</option>
+                    <option value="gaussian_blur">Gaussian Blur</option>
+                    <option value="median_blur">Median Blur</option>
+                    <option value="sharpen">Sharpen</option>
+                    <option value="threshold">Threshold</option>
+                    <option value="edge_detection">Edge Detection</option>
+                    <option value="dilation">Dilation</option>
+                    <option value="erosion">Erosion</option>
+                    <option value="opening">Opening</option>
+                    <option value="closing">Closing</option>
+                </select>
+
+                <div id="parameters"></div>
+
+                <button id="processBtn">Process Image</button>
+                <!-- replaced batch with a download button (disabled until an image is processed) -->
+                <button id="downloadBtn" disabled>Download</button>
+            </div>
+        </div>
+
+        <div class="preview-container">
+            <div class="preview-box">
+                <h3>Original</h3>
+                <div id="originalPreview">
+                    <img id="originalImg" alt="Original preview" />
+                </div>
+            </div>
+            <div class="preview-box">
+                <h3>Processed</h3>
+                <div id="processedPreview">
+                    <img id="processedImg" alt="Processed preview" />
+                </div>
+                <!-- download link removed from preview box; toolbar Download button handles downloads -->
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+<!-- final -->
+
+</html>

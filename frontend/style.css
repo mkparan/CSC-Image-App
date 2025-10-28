@@ -1,0 +1,245 @@
+:root {
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.toolbar {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--surface);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background: var(--primary-hover);
+}
+
+.preview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.preview-box {
+    background: var(--surface);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.preview-box h3 {
+    margin: 0 0 1rem 0;
+    color: var(--text);
+}
+
+.preview-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+select,
+input {
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 0.375rem;
+    background: var(--surface);
+}
+
+
+/* Add these new styles at the end of the file */
+
+#parameters {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#parameters label {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+#parameters input {
+    width: 80px;
+}
+
+.preview-box p {
+    text-align: center;
+    color: var(--text);
+    font-size: 0.875rem;
+}
+
+
+/* Add drag and drop styles */
+
+.drag-over {
+    border: 2px dashed var(--primary);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+
+/* Loading state */
+
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+
+/* Error state */
+
+.error {
+    border: 2px solid #ef4444;
+    color: #ef4444;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    margin: 0.5rem 0;
+}
+
+
+/* Drop area styles */
+
+.drop-area {
+    border: 2px dashed var(--border);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    background: var(--surface);
+    margin-bottom: 1rem;
+}
+
+.drop-area.drag-over {
+    border-color: var(--primary);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+.drop-area input[type="file"] {
+    display: none;
+}
+
+.browse {
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.browse:hover {
+    text-decoration: underline;
+}
+
+
+/* Controls section */
+
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+/* Download button */
+
+.download {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.download:hover {
+    background: var(--primary-hover);
+}
+
+
+/* Hide download link when no processed image */
+
+.download.hidden {
+    display: none;
+}
+
+
+/* Parameter controls styling */
+
+.parameter-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.parameter-wrap label {
+    min-width: 120px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.parameter-wrap input[type="range"] {
+    flex: 1;
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.parameter-wrap input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.parameter-wrap input[type="range"]::-webkit-slider-thumb:hover {
+    background: var(--primary-hover);
+}
+
+.param-value {
+    min-width: 40px;
+    text-align: right;
+    font-size: 0.875rem;
+    color: var(--text);
+}
